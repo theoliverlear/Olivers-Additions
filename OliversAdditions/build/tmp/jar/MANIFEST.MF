@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: OliversAdditions
+Implementation-Version: org.theoliverlear
+Specification-Vendor: 
+Specification-Title: olivers_additions
+Implementation-Timestamp: 2023-11-16T10:11:25-0600
+Specification-Version: 1
+Implementation-Vendor: 
+
