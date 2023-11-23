@@ -40,7 +40,7 @@ public class ModDynamicEvents {
         }
     }
     @SubscribeEvent
-    public void onChickenSpawn(EntityJoinWorldEvent entityCreatedEvent) {
+    public static void onChickenSpawn(EntityJoinWorldEvent entityCreatedEvent) {
         if (entityCreatedEvent.getEntity() instanceof ChickenEntity) {
             ChickenEntity chicken = (ChickenEntity) entityCreatedEvent.getEntity();
             PluckableChickenEntity pluckableChicken = new PluckableChickenEntity(EntityType.CHICKEN,
