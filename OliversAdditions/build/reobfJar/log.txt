@@ -108,15 +108,16 @@ Writing Output: C:\Users\olive\GitHub\Olivers-Additions\OliversAdditions\build\r
   org/
   org/theoliverlear/
   org/theoliverlear/oliversadditions/
-  org/theoliverlear/oliversadditions/OliversAdditionsMod$RegistryEvents.class
   org/theoliverlear/oliversadditions/OliversAdditionsMod.class
   org/theoliverlear/oliversadditions/command/
   org/theoliverlear/oliversadditions/command/HelloWorldCommand.class
   org/theoliverlear/oliversadditions/entities/
   org/theoliverlear/oliversadditions/entities/PluckableChickenEntity.class
   org/theoliverlear/oliversadditions/events/
-  org/theoliverlear/oliversadditions/events/ModDynamicEvents.class
-  org/theoliverlear/oliversadditions/events/ModStaticEvents.class
+  org/theoliverlear/oliversadditions/events/ChickenSpawnEventHandler.class
   org/theoliverlear/oliversadditions/items/
   org/theoliverlear/oliversadditions/items/TweezersItem.class
+  org/theoliverlear/oliversadditions/register/
+  org/theoliverlear/oliversadditions/register/EntityRegistration.class
+  org/theoliverlear/oliversadditions/register/ItemRegistration.class
   pack.mcmeta

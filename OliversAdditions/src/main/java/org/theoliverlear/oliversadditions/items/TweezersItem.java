@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 
 public class TweezersItem extends Item {
     public TweezersItem() {
-        super(new Item.Properties().stacksTo(1).defaultDurability(10));
+        super(new Item.Properties().stacksTo(1).defaultDurability(10).tab(ItemGroup.TAB_TOOLS));
         this.setDamage(new ItemStack(this), 1);
     }
     @Override

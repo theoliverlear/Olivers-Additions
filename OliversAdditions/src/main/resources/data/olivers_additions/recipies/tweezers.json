@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-     " N",
-     "N "
+    " N",
+    "N "
   ],
-    "key": {
-         "N": {
-            "item": "minecraft:iron_nugget"
-         }
-    },
+  "key": {
+    "N": {
+      "item": "minecraft:iron_nugget"
+    }
+  },
   "result": {
     "item": "olivers_additions:tweezers",
     "count": 1
