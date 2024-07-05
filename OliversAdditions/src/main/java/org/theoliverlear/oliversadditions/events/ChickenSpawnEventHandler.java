@@ -29,6 +29,7 @@ public class ChickenSpawnEventHandler {
         Entity entity = event.getEntity();
 
         if (entity instanceof ChickenEntity && !(entity instanceof PluckableChickenEntity) && !event.getWorld().isClientSide()) {
+            LOGGER.info("Entity is ChickenEntity and a PluckableChickenEntity is being spawned");
             Runnable task = () -> {
                 ChickenEntity chicken = (ChickenEntity) entity;
                 PluckableChickenEntity pluckableChicken = new PluckableChickenEntity(EntityType.CHICKEN, chicken.level);
