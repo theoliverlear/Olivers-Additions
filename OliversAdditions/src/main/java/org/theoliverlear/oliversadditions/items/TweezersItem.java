@@ -1,8 +1,7 @@
 package org.theoliverlear.oliversadditions.items;
-
+//=================================-Imports-==================================
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.item.ItemEntity;
-import net.minecraft.entity.passive.ChickenEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.*;
@@ -13,10 +12,17 @@ import org.theoliverlear.oliversadditions.entities.PluckableChickenEntity;
 import java.util.function.Consumer;
 
 public class TweezersItem extends Item {
+    //============================-Constants-=================================
     private static final Logger LOGGER = LogManager.getLogger();
+    //===========================-Constructors-===============================
     public TweezersItem() {
         super(new Item.Properties().durability(10).tab(ItemGroup.TAB_TOOLS));
     }
+    //=============================-Methods-==================================
+
+    //============================-Overrides-=================================
+
+    //-----------------------Interact-Living-Entity---------------------------
     @Override
     public ActionResultType interactLivingEntity(ItemStack stack, PlayerEntity player, LivingEntity target, Hand hand) {
         LOGGER.info("TweezersItem.interactLivingEntity called");
@@ -47,6 +53,7 @@ public class TweezersItem extends Item {
         }
         return super.interactLivingEntity(stack, player, target, hand);
     }
+    //----------------------------Damage-Item---------------------------------
     @Override
     public <T extends LivingEntity> int damageItem(ItemStack stack, int amount, T entity, Consumer<T> onBroken) {
         if (entity instanceof PlayerEntity && ((PlayerEntity) entity).abilities.instabuild) {
@@ -64,14 +71,17 @@ public class TweezersItem extends Item {
         }
         return amount;
     }
+    //-------------------------Has-Container-Item-----------------------------
     @Override
     public boolean hasContainerItem(ItemStack stack) {
         return true;
     }
+    //---------------------------Is-Damageable--------------------------------
     @Override
     public boolean isDamageable(ItemStack stack) {
         return stack.getDamageValue() < stack.getMaxDamage();
     }
+    //-------------------------Get-Container-Item-----------------------------
     @Override
     public ItemStack getContainerItem(ItemStack itemStack) {
         ItemStack stack = itemStack.copy();
