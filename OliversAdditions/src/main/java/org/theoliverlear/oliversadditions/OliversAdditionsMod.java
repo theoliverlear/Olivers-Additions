@@ -1,10 +1,13 @@
 package org.theoliverlear.oliversadditions;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.entity.EntityRendererManager;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -17,6 +20,7 @@ import org.apache.logging.log4j.Logger;
 import org.theoliverlear.oliversadditions.command.HelloWorldCommand;
 import org.theoliverlear.oliversadditions.register.EntityRegistration;
 import org.theoliverlear.oliversadditions.register.ItemRegistration;
+import org.theoliverlear.oliversadditions.render.PluckableChickenRenderer;
 
 import java.util.stream.Collectors;
 
@@ -38,9 +42,14 @@ public class OliversAdditionsMod {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processInterModComms);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::handleClientSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+    }
+    private void doClientStuff(final FMLClientSetupEvent event) {
+        LOGGER.info("CREATING PLUCKABLE CHICKEN RENDERER");
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.PLUCKABLE_CHICKEN.get(), PluckableChickenRenderer::new);
     }
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
@@ -71,7 +80,6 @@ public class OliversAdditionsMod {
         // Register tweezers item
 
     }
-
     // You can use EventBusSubscriber to automatically subscribe events
     // on the contained class (this is subscribing to the MOD Event bus for
     // receiving Registry Events).
