@@ -1,0 +1,8 @@
+{
+  "pluck": {
+    "category": "player",
+    "sounds": [
+      "olivers_additions:pluck"
+    ]
+  }
+}
