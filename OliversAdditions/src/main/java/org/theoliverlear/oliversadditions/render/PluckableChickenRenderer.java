@@ -1,5 +1,5 @@
 package org.theoliverlear.oliversadditions.render;
-
+//=================================-Imports-==================================
 import mcp.MethodsReturnNonnullByDefault;
 import net.minecraft.client.renderer.entity.ChickenRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
@@ -10,15 +10,22 @@ import org.apache.logging.log4j.Logger;
 import org.theoliverlear.oliversadditions.entities.PluckableChickenEntity;
 
 public class PluckableChickenRenderer extends ChickenRenderer {
+    //============================-Constants-=================================
     private static final Logger LOGGER = LogManager.getLogger();
     public static final ResourceLocation PLUCKED_TEXTURE = new ResourceLocation("olivers_additions", "textures/entity/plucked_chicken.png");
     public static final ResourceLocation NORMAL_TEXTURE = new ResourceLocation("olivers_additions", "textures/entity/pluckable_chicken.png");
+    //===========================-Constructors-===============================
     public PluckableChickenRenderer(EntityRendererManager renderManagerIn) {
         super(renderManagerIn);
         LOGGER.info("PluckableChickenRenderer constructor called");
         LOGGER.info("PLUCKED TEXTURE PATH: {}", PLUCKED_TEXTURE.getPath());
         LOGGER.info("NORMAL TEXTURE PATH: {}", NORMAL_TEXTURE.getPath());
     }
+    //=============================-Methods-==================================
+
+    //============================-Overrides-=================================
+
+    //------------------------Get-Texture-Location----------------------------
     @MethodsReturnNonnullByDefault
     @Override
     public ResourceLocation getTextureLocation(ChickenEntity entity) {
