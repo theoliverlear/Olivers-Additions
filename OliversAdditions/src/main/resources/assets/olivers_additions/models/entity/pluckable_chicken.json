@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:entity/chicken",
+  "textures": {
+    "0": "olivers_additions:entity/pluckable_chicken"
+  }
+}
