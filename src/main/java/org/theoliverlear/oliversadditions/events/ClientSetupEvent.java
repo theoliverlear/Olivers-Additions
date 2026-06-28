@@ -16,6 +16,6 @@ public class ClientSetupEvent {
     //-----------------------On-Client-Setup-Event----------------------------
     @SubscribeEvent
     public static void onClientSetupEvent(FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.PLUCKABLE_CHICKEN.get(), PluckableChickenRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.PLUCKABLE_CHICKEN, PluckableChickenRenderer::new);
     }
 }

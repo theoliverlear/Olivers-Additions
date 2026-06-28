@@ -16,6 +16,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.theoliverlear.oliversadditions.command.HelloWorldCommand;
+import org.theoliverlear.oliversadditions.command.RemoveChickensCommand;
 import org.theoliverlear.oliversadditions.register.EntityRegistration;
 import org.theoliverlear.oliversadditions.register.ItemRegistration;
 import org.theoliverlear.oliversadditions.render.PluckableChickenRenderer;
@@ -44,7 +45,7 @@ public class OliversAdditionsMod {
     //------------------------Client-Registration-----------------------------
     private void clientRegistration(final FMLClientSetupEvent event) {
         LOGGER.info("CREATING PLUCKABLE CHICKEN RENDERER");
-        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.PLUCKABLE_CHICKEN.get(), PluckableChickenRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(EntityRegistration.PLUCKABLE_CHICKEN, PluckableChickenRenderer::new);
     }
     //-----------------------------Init-Setup---------------------------------
     private void initSetup(final FMLCommonSetupEvent event) {
@@ -72,5 +73,6 @@ public class OliversAdditionsMod {
     public void onServerStarting(FMLServerStartingEvent event) {
         LOGGER.info("HELLO from server starting");
         HelloWorldCommand.registerHelloWorldCommand(event.getServer().getCommands().getDispatcher());
+        RemoveChickensCommand.register(event.getServer().getCommands().getDispatcher());
     }
 }

@@ -38,6 +38,7 @@ public class ChickenSpawnEventHandler {
                 pluckableChicken.setDeltaMovement(chicken.getDeltaMovement());
                 pluckableChicken.setCustomName(chicken.getCustomName());
                 pluckableChicken.setCustomNameVisible(chicken.isCustomNameVisible());
+                pluckableChicken.copyPosition(chicken);
                 chicken.level.addFreshEntity(pluckableChicken);
                 chicken.remove();
             };

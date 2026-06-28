@@ -1,5 +1,7 @@
 package org.theoliverlear.oliversadditions.events;
 //=================================-Imports-==================================
+import net.minecraft.entity.EntityType;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -14,6 +16,6 @@ public class ModEventSubscriber {
     //-----------------On-Entity-Attribute-Creation-Event---------------------
     @SubscribeEvent
     public static void onEntityAttributeCreation(EntityAttributeCreationEvent event) {
-        event.put(EntityRegistration.PLUCKABLE_CHICKEN.get(), PluckableChickenEntity.createAttributes().build());
+        event.put(EntityRegistration.PLUCKABLE_CHICKEN, PluckableChickenEntity.createAttributes().build());
     }
 }
